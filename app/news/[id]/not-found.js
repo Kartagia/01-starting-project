@@ -8,6 +8,6 @@ import Title from "@/components/title.mjs";
 export default function NewsArticleNotFound() {
     return (<main className="not-found">
         <header><Title>News Article Not Found</Title></header>
-        <main><p>Could not find the news article.</p></main>
+        <main><p>Unfortunately we could not find the requested news article.</p></main>
     </main>);
 }
