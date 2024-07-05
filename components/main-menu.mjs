@@ -8,10 +8,10 @@ export default function MainMenuComponent() {
     <header>
       <ul id="main-header">
         <li>
-          <Link href="/">News Page</Link>
+          <Link href="/">NextNews</Link>
         </li>
         <li>
-          <Link href="/news">All News</Link>
+          <Link href="/news">News</Link>
         </li>
       </ul>
     </header>
