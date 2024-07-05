@@ -5,13 +5,13 @@ import Title from "@/components/title.mjs";
  * @returns {React.Component}
  */
 export default function ArchiveLayout({ archive, children }) {
+export default function ArchiveLayout({ latest, children }) {
   return (
     <section>
       <header>
         <Title>News Archive</Title>
       </header>
       <main>
-        <section id="archive-filter">{archive}</section>
       </main>
     </section>
   );
