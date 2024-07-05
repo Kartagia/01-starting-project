@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "News Service",
+  title: "News List",
   description: "A simple news service as a project for NextJS course on Udemy",
 };
 
