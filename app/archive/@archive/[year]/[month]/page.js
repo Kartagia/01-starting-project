@@ -8,6 +8,6 @@ export default function ArchiveYearListPage({params}) {
     const month = params.month;
 
     return (<section>
-        <header><Title>News Arichive on ${month} of ${year}</Title></header>
+        <header><Title>News Arichive on {month} of {year}</Title></header>
     </section>)
 }
