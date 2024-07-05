@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div id="page">
-          <MainMenuComponent id="main-header" />
+          <MainMenuComponent/>
           {children}
         </div>
       </body>
