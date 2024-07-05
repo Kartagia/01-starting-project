@@ -10,6 +10,6 @@ export default function ArchiveYearListPage({params}) {
 
 
     return (<section>
-        <header><Title>News Arichive on ${year}</Title></header>
+        <header><Title>News Arichive on {year}</Title></header>
     </section>)
 }
