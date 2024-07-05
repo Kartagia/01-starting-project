@@ -6,8 +6,8 @@ import Link from "next/link";
  * The archive page with selecting archived news by year and month.
  *
  */
-export default function ArchivePage() {
-  const newsYears = getAvailableNewsYears();
+export default async function ArchivePage() {
+  const newsYears = await getAvailableNewsYears();
 
   return (
     <header>
