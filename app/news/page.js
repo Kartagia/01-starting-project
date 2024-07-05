@@ -22,6 +22,7 @@ export default async function NewsListPage() {
           return (
             <li key={id}>
               <Link href={`/news/${id}`}><img src={`/images/news/${newsEntry.image}`} alt={newsEntry.title}></img></Link>
+              <span>{newsEntry.title}</span>
             </li>
           );
         })}
