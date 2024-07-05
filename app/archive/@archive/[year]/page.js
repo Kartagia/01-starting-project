@@ -1,3 +1,4 @@
+import LinkListComponent from "@/components/LinkListComponent.mjs";
 import Title from "@/components/title.mjs";
 import { getAvailableNewsMonths, getNewsForYear } from "@/lib/dummyNews.mjs";
 import Link from "next/link";
@@ -26,11 +27,6 @@ export default async function ArchiveYearListPage({params}) {
                 </ul>
             </nav>
         </header>
-        <main>
-            {news.map( ([id, newsItem]) => (<article key={newsItem.id}><Link href={`/news/${newsItem.slug}`}>
-            <img src={`/images/news/${newsItem.image}`} alt={newsItem.title}></img>
-            <Title>${newsItem.title}</Title>
-            </Link></article>))}
-        </main>
+        <LinkListComponent items={news}/>
     </section>)
 }
