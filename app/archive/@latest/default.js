@@ -1,5 +1,4 @@
-import LinkListComponent from "@/components/LinkListComponent.mjs";
-import { getLatestNews } from "@/lib/dummyNews.mjs";
+import Title from "@/components/title.mjs";
 
 /**
  * The page containing latests news.
