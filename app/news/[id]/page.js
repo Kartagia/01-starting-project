@@ -11,25 +11,29 @@ export default async function NewsDetailPage({ params }) {
   const id = params.id;
 
   try {
-    const post = await getPost(id);
+    const newsItem = await getPost(id);
 
-    if (!post) {
+    if (!newsItem) {
+        console.log(`The news item ${id} not found`);
       notFound();
     }
 
-    if (post) {
+    if (newsItem) {
       return (
-        <article>
+        <article className="news-article">
           <header>
-            <Title>{post.title}</Title>
+            <img src={`/images/news/${newsItem.image}`} alt={newsItem.image}></img>
+            <Title>{newsItem.title}</Title>
+            <time dateTime={newsItem.date}>{newsItem.date}</time>
           </header>
-          <main>{post.content}</main>
+          <main>{newsItem.content}</main>
         </article>
       );
     } else {
       throw Error("No such news exists");
     }
   } catch (err) {
+    console.log(`The news item ${id} failed due error ${err}`);
     notFound();
   }
 }
