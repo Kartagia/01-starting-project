@@ -14,6 +14,6 @@ export default async function ArchiveYearListPage({params}) {
     const news = await getNewsForYearAndMonth(year, month);
 
     return (<section>
-        <LinkListComponent title={(<>News Arrhive on {month}/{year}</>)} items={news}/>
+        <header><Title>News Arichive on {month} of {year}</Title></header>
     </section>)
 }
