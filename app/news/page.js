@@ -1,3 +1,4 @@
+import LinkListComponent from "@/components/LinkListComponent.mjs";
 import Title from "@/components/title.mjs";
 import { getAllPosts } from "@/lib/dummyNews.mjs";
 
@@ -16,17 +17,7 @@ export default async function NewsListPage() {
         <Title>News Page</Title>
       </header>
       <main>
-        <ul className="news-list">
-        {[...news].map( (entry) => {
-          const [id, newsEntry] = entry;
-          return (
-            <li key={id}>
-              <Link href={`/news/${id}`}><img src={`/images/news/${newsEntry.image}`} alt={newsEntry.title}></img></Link>
-              <span>{newsEntry.title}</span>
-            </li>
-          );
-        })}
-        </ul>
+        <LinkListComponent items={news}/>
       </main>
     </section>
   );
