@@ -13,17 +13,19 @@ export default async function NewsListPage() {
   return (
     <section>
       <header>
-        <Title>News Articles</Title>
+        <Title>News Page</Title>
       </header>
       <main>
+        <ul className="news-list">
         {[...news].map( (entry) => {
           const [id, newsEntry] = entry;
           return (
-            <article key={id}>
-              <Link href={`/news/${id}`}>{newsEntry.title}</Link>
-            </article>
+            <li key={id}>
+              <Link href={`/news/${id}`}><img src={`/images/news/${newsEntry.image}`} alt={newsEntry.title}></img></Link>
+            </li>
           );
         })}
+        </ul>
       </main>
     </section>
   );
