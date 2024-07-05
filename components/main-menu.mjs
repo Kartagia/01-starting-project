@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function MainMenuComponent() {
   return (
     <header>
-      <ul>
+      <ul id="main-header">
         <li>
           <Link href="/">News Page</Link>
         </li>
