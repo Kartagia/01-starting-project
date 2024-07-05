@@ -4,7 +4,7 @@ import Title from "@/components/title.mjs";
  * The layout containing both latest news page and latest pages.
  * @returns {React.Component}
  */
-export default function ArchiveLayout({ archive, latest, children }) {
+export default function ArchiveLayout({ archive, children }) {
   return (
     <section>
       <header>
@@ -12,7 +12,6 @@ export default function ArchiveLayout({ archive, latest, children }) {
       </header>
       <main>
         <section id="archive-filter">{archive}</section>
-        <secton id="archive-latest">{latest}</secton>
       </main>
     </section>
   );
