@@ -1,8 +1,12 @@
-import Title from "@/components/title.mjs";
+import LinkListComponent from "@/components/LinkListComponent.mjs";
+import { getLatestNews } from "@/lib/dummyNews.mjs";
 
-/**
- * The page containing latests news.
- */
-export default function LatestNewsPage() {
-    reutrn (<Title>Latest news</Title>)
+export default async function LatestNewsPage() {
+  const news = await getLatestNews(3);
+
+  return (
+    <>
+      <LinkListComponent items={news} title="Latest News" />
+    </>
+  );
 }
