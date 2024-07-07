@@ -10,6 +10,9 @@ import Link from "next/link";
  */
 export default async function ArchiveYearListPage({params}) {
     const year = Number.parseInt(params.year);
+    if (Number.isNaN(year) || !Number.isSafeInteger(year)) {
+        throw new RangeError(`The year should be an integer`);
+    }
 
     const news = await (getNewsForYear(year).then( (entries) => {
         entries.forEach( ([id, newsItem]) => {

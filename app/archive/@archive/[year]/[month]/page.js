@@ -11,6 +11,12 @@ export default async function ArchiveYearListPage({params}) {
     const year = Number.parseInt(params.year);
     const month = Number.parseInt(params.month);
 
+    if (!Number.isSafeInteger(year)) {
+        throw new RangeError(`The year should be an integer`);
+    } else if (!Number.isSafeInteger(month)) {
+        throw new RangeError(`The month of year should be an integer`);
+    }
+
     const news = await getNewsForYearAndMonth(year, month);
 
     return (<section>
