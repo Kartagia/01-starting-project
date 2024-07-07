@@ -35,7 +35,7 @@ export default async function ArchivePage({ params }) {
     if (Number.isSafeInteger(result)) {
       return result;
     } else {
-      throw new RangeError(nessage);
+      throw new RangeError(message);
     }
   }
 
