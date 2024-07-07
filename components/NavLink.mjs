@@ -23,6 +23,8 @@ export default function NavLink({ href, children }) {
 
   if (isActive(path, href) && !classNames.includes("active")) {
     classNames = [...classNames, "active"];
+  } else if (!isActive(path, href) && classNames.includes("active")) {
+    classNames = classNames.filter( className => className !== "active");
   }
 
   const style = classNames?.length ? classNames.join(" ") : undefined;
