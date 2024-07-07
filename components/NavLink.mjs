@@ -23,12 +23,14 @@ export default function NavLink({ href, children }) {
 
   if (isActive(path, href) && !classNames.includes("active")) {
     classNames = [...classNames, "active"];
+  } else if (!isActive(path, href) && classNames.includes("active")) {
+    classNames = classNames.filter((className) => className !== href);
   }
 
   const style = classNames?.length ? classNames.join(" ") : undefined;
 
   return (
-    <Link href={href} className={isActive(path, href) ? "active": undefined}>
+    <Link href={href} className={isActive(path, href) ? "active" : undefined}>
       {children}
     </Link>
   );
