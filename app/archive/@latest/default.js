@@ -1,8 +1,8 @@
 import Title from "@/components/title.mjs";
 
+import {LatestNewsPage} from "./page";
+
 /**
- * The page containing latests news.
+ * The default page is the page file.
  */
-export default function LatestNewsPage() {
-    return (<header><Title>Latest news</Title></header>)
-}
+export default LatestNewsPage;
