@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Title from "./title.mjs";
+import NewsLinkComponent from "./NewsLinkComponent.mjs";
 
 /**
  * The properties of the link list component.
  * @typedef {Object} LinkListProps
  * @property {string} [title] The title of the list.
  * @property {[string, ITEM][]} [items=[]] The list entries.
+ * @property {string} [fullscreenImageSuffix="/image"] The full screen image detail suffix.
  * @property {string} [imageRoot="/images/news"] The root path to the images of the items.
  * @property {string} [detailRoot="/news"] The root path of the image details.
  */
@@ -21,8 +23,7 @@ export default function LinkListComponent(props = {}) {
   const {
     title = undefined,
     items = [],
-    detailRoot = "/news",
-    imageRoot = "/images/news",
+    ...rest
   } = props;
   return (
     <>
@@ -33,15 +34,9 @@ export default function LinkListComponent(props = {}) {
       )}
       <main className="news-list">
         {items.map(([id, newsItem]) => (
-          <article key={newsItem.id}>
-            <Link href={`${detailRoot}/${id}`}>
-              <img
-                src={`${imageRoot}/${newsItem.image}`}
-                alt={newsItem.title}
-              ></img>
-              <Title>{newsItem.title}</Title>
-            </Link>
-          </article>
+          <NewsLinkComponent newsId={id} newsItem={newsItem} {...rest}>
+
+          </NewsLinkComponent>
         ))}
       </main>
     </>
