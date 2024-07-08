@@ -1,8 +1,18 @@
-import Title from "@/components/title.mjs";
-
-import {LatestNewsPage} from "./page";
+import LinkListComponent from "@/components/LinkListComponent.mjs";
+import { getLatestNews } from "@/lib/dummyNews.mjs";
+import React from "react";
 
 /**
- * The default page is the page file.
+ * The default latest news page. This is actually the implementation of the
+ * latest branch. 
+ * @returns {React.Component}
  */
-export default LatestNewsPage;
+export default async function LatestNewsPage() {
+    const news = await getLatestNews(3);
+
+    return (
+        <>
+            <LinkListComponent items={news} title="Latest News" />
+        </>
+    );
+}
