@@ -6,7 +6,7 @@
  */
 
 /**
- * 
+ * The title component handling title.
  * @param {import("react").PropsWithChildren<TitleProps>} props 
  */
 export default function Title(props) {
