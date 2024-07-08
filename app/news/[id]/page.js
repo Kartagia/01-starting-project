@@ -1,7 +1,9 @@
 import classes from "@/app/globals.css";
+import NewsLinkComponent from "@/components/NewsLinkComponent.mjs";
 
 import Title from "@/components/title.mjs";
 import { getPost } from "@/lib/dummyNews.mjs";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 /**
@@ -22,8 +24,7 @@ export default async function NewsDetailPage({ params }) {
       return (
         <article className="news-article">
           <header>
-            <img src={`/images/news/${newsItem.image}`} alt={newsItem.image}></img>
-            <Title>{newsItem.title}</Title>
+            <NewsLinkComponent newsId={id} embedded={true} newsItem={newsItem} imageLink="fullscreen"/>
             <time dateTime={newsItem.date}>{newsItem.date}</time>
           </header>
           <main>{newsItem.content}</main>
