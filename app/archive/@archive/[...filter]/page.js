@@ -64,7 +64,7 @@ export default async function ArchivePage({ params }) {
 
     // The year is okay.
     news  = await getNewsForYear(year);
-    const availableMonths = await getAvailableNewsMonths(year);
+    const availableMonths = await getAvailableNewsMonths(year).then(months => (months.sort( (a,b) => (a - b))));
     links = availableMonths.map((month) => ({
         key: month,
         href: `${year}/${month}`,
