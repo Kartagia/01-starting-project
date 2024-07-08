@@ -3,6 +3,7 @@
  * @typedef {Object} NewsItemProp
  * @property {import("@/lib/news.mjs").NewsArticle} newsItem The news item.
  * @property {string} newsId The identifier of the news entry.
+ * @property {"article"|"fullscreen"} [imageLink="article"] The image link type.
  */
 
 import Link from "next/link";
@@ -16,13 +17,17 @@ export default function NewsLinkComponent(params = {}) {
     const {
         newsId,
         newsItem,
+        imageLink = "article",
         detailRoot = "/news",
         fullscreenImageSuffix = "/image",
         imageRoot = "/images/news",
     } = params;
 
+    const imageHref = `${detailRoot}/${newsId}${
+        ((imageLink === "fullscreen") && (fullscreenImageSuffix)) ? fullscreenImageSuffix :  ""}`;
+
     return (<article key={newsItem.id}>
-        <Link href={`${detailRoot}/${newsId}${fullscreenImageSuffix ?? ""}`}>
+        <Link href={imageHref}>
             <img
                 src={`${imageRoot}/${newsItem.image}`}
                 alt={newsItem.title}
