@@ -3,7 +3,9 @@
  * @typedef {Object} NewsItemProp
  * @property {import("@/lib/news.mjs").NewsArticle} newsItem The news item.
  * @property {string} newsId The identifier of the news entry.
- * @property {"article"|"fullscreen"} [imageLink="article"] The image link type.
+ * @property {"article"|"fullscreen"} [imageLink="article"] The image link type. 
+ * @property {boolean} [embedded=false] Is the link embeded. An embedded link
+ * is returend as a fragment. An non-embeded link is returned as an article.
  */
 
 import Link from "next/link";
@@ -21,13 +23,16 @@ export default function NewsLinkComponent(params = {}) {
         detailRoot = "/news",
         fullscreenImageSuffix = "/image",
         imageRoot = "/images/news",
+        embedded = false
     } = params;
 
-    const imageHref = `${detailRoot}/${newsId}${
-        ((imageLink === "fullscreen") && (fullscreenImageSuffix)) ? fullscreenImageSuffix :  ""}`;
+    let imageLinkHref = `${detailRoot}/${newsId}`;
+    if (fullscreenImageSuffix && (imageLink === "fullscreen")) {
+        imageLinkHref += fullscreenImageSuffix;
+    }
 
-    return (<article key={newsItem.id}>
-        <Link href={imageHref}>
+    const content = (<>
+        <Link href={imageLinkHref}>
             <img
                 src={`${imageRoot}/${newsItem.image}`}
                 alt={newsItem.title}
@@ -36,6 +41,11 @@ export default function NewsLinkComponent(params = {}) {
         <Link href={`${detailRoot}/${newsId}`}>
             <Title>{newsItem.title}</Title>
         </Link>
-    </article>
-    )
+    </>);
+
+    if (embedded) {
+        return content;
+    } else {
+        return (<article>{content}</article>)
+    }
 }
