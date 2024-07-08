@@ -34,7 +34,7 @@ export default function LinkListComponent(props = {}) {
       )}
       <main className="news-list">
         {items.map(([id, newsItem]) => (
-          <NewsLinkComponent newsId={id} newsItem={newsItem} {...rest}>
+          <NewsLinkComponent imageLink="fullscreen" newsId={id} newsItem={newsItem} {...rest}>
 
           </NewsLinkComponent>
         ))}
