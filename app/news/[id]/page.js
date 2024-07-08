@@ -16,7 +16,7 @@ export default async function NewsDetailPage({ params }) {
     const newsItem = await getPost(id);
 
     if (!newsItem) {
-        console.log(`The news item ${id} not found`);
+      console.log(`The news item ${id} not found`);
       notFound();
     }
 
@@ -24,7 +24,11 @@ export default async function NewsDetailPage({ params }) {
       return (
         <article className="news-article">
           <header>
-            <NewsLinkComponent newsId={id} embedded={true} newsItem={newsItem} imageLink="fullscreen"/>
+            <Link href={`/news/${id}/image`} alt={newsItem.title}>
+              <img src={`/images/news/${newsItem.image}`}
+                alt={newsItem.title} />
+            </Link>
+            <Title>{newsItem.title}</Title>
             <time dateTime={newsItem.date}>{newsItem.date}</time>
           </header>
           <main>{newsItem.content}</main>
