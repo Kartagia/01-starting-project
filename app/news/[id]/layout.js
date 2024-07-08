@@ -4,7 +4,10 @@ export const metadata = {
     description: "A simple news service as a project for NextJS course on Udemy",
   };
   
-  export default function NewsLayout({ children }) {
-    return <>{children}</>;
+  export default function NewsLayout({ children, modal }) {
+    return <>
+    {modal}
+    {children}
+    </>;
   }
   
