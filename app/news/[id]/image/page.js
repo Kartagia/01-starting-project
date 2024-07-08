@@ -11,7 +11,7 @@ export default async function ImagePage({params}) {
     try {
     const newsItem = await getPost(newsItemId);
     return (<div className={"fullscreen-iamge"}>
-        <NewsLinkComponent newsId={newsItemId} newsItem={newsItem} />
+        <NewsLinkComponent imageLink={"news"} newsId={newsItemId} newsItem={newsItem} />
     </div>)
     } catch(err) {
         notFound();
