@@ -1,5 +1,4 @@
-import MainMenuComponent from "@/components/main-menu.mjs";
-import "./globals.css";
+import "../globals.css";
 
 export const metadata = {
   title: "Next.js Page Routing & Rendering",
@@ -11,7 +10,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div id="page">
-          <MainMenuComponent/>
           {children}
         </div>
       </body>
