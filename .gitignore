@@ -1,3 +1,6 @@
 node_modules
 .next
 package-lock.json
+backend/.DS_Store
+__MACOSX/backend/._.DS_Store
+backend/data.db
