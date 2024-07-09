@@ -1,8 +1,5 @@
-import classes from "@/app/globals.css";
-import NewsLinkComponent from "@/components/NewsLinkComponent.mjs";
-
 import Title from "@/components/title.mjs";
-import { getPost } from "@/lib/dummyNews.mjs";
+import { getPost } from "@/lib/BackendNewsService.mjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
