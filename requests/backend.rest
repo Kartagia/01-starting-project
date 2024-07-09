@@ -1,0 +1,15 @@
+GET http://localhost:8081/news/1
+Accept: application/json
+
+
+
+
+## Get single news.
+
+GET http://localhost:8081/news/1
+Accept: application/json
+
+
+
+##
+
