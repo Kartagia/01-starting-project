@@ -16,3 +16,11 @@ export function middleware(request) {
     // Continue to the next middleware.
     return NextResponse.next();
 }
+
+/**
+ * The configuration of the middleware.
+ * - Limits the middlware to "/news" page only.
+ */
+export const config = {
+    matcher: '/news'
+}
