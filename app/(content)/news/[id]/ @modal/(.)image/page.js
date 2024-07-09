@@ -1,5 +1,5 @@
 import NewsLinkComponent from "@/components/NewsLinkComponent.mjs";
-import { getPost } from "@/lib/dummyNews.mjs";
+import { getNewsArticle } from "@/lib/BackendNewsService.mjs";
 import { notFound } from "next/navigation";
 
 /**
@@ -9,7 +9,7 @@ export default async function ImagePage({ params }) {
 
     const newsItemId = params.id;
     try {
-        const newsItem = await getPost(newsItemId);
+        const newsItem = await getNewsArticle(newsItemId);
         return (
             <>
             <div className="modal-backdrop" /><dialog className="modal" open>
