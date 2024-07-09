@@ -1,15 +1,28 @@
-GET http://localhost:8081/news/1
+
+### GEt all news
+
+GET http://localhost:8081/news
 Accept: application/json
 
 
 
 
-## Get single news.
+
+### Get single news.
 
 GET http://localhost:8081/news/1
 Accept: application/json
 
 
 
-##
+### Add new news
+
+POST http://localhost:8081/news
+Content-Type: application/json
+
+{
+    "title": "Traveller arrives to the Gateway at Belt of Orion",
+    "slug": "traveller-arrives-to-gateway",
+    "content": "Traveller arrives to the gateway at the Orion's Belt escorted by a replicant security guards."
+}
 
