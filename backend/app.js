@@ -79,6 +79,24 @@ app.get('/news', (req, res) => {
   res.json(news);
 });
 
+app.get('/news/:id', (req, res) => {
+  try {
+    const id = +req.params.id;
+    console.log(`Getting news ${id}`);
+    const news = db.prepare('SELECT * FROM news WHERE id=?').get(id);
+    console.log(`Got result: ${news !== undefined}`);
+    console.table(news);
+    if (news) {
+      res.json(news);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(400);
+  }
+});
+
 initDb();
 
 app.listen(8081);
