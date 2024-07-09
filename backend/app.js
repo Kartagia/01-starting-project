@@ -84,8 +84,6 @@ app.get('/news/:id', (req, res) => {
     const id = +req.params.id;
     console.log(`Getting news ${id}`);
     const news = db.prepare('SELECT * FROM news WHERE id=?').get(id);
-    console.log(`Got result: ${news !== undefined}`);
-    console.table(news);
     if (news) {
       res.json(news);
     } else {
