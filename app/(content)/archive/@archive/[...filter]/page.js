@@ -5,7 +5,7 @@ import {
   getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth,
-} from "@/lib/dummyNews.mjs";
+} from "@/lib/news.mjs";
 import Link from "next/link";
 
 /**
