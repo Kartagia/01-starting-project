@@ -1,5 +1,5 @@
 import NewsLinkComponent from "@/components/NewsLinkComponent.mjs";
-import { getNewsArticle } from "@/lib/BackendNewsService.mjs";
+import { getNewsArticle } from "@/lib/news.mjs";
 import { notFound } from "next/navigation";
 
 /**

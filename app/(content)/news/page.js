@@ -2,7 +2,7 @@
 
 import LinkListComponent from "@/components/LinkListComponent.mjs";
 import Title from "@/components/title.mjs";
-import { getAllPosts } from "@/lib/dummyNews.mjs";
+import { getAllPosts } from "@/lib/news.mjs";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";

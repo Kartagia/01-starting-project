@@ -1,5 +1,5 @@
 "use client";
-import { getNewsArticle } from "@/lib/BackendNewsService.mjs";
+import { getNewsArticle } from "@/lib/news.mjs";
 import Link from "next/link";
 import { notFound, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

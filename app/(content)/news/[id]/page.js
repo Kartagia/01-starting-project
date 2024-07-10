@@ -1,5 +1,5 @@
 import Title from "@/components/title.mjs";
-import { getPost } from "@/lib/BackendNewsService.mjs";
+import { getPost } from "@/lib/news.mjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
