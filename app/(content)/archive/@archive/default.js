@@ -1,5 +1,5 @@
 import Title from "@/components/title.mjs";
-import { getAvailableNewsYears } from "@/lib/dummyNews.mjs";
+import { getAvailableNewsYears } from "@/lib/news.mjs";
 import Link from "next/link";
 
 /**

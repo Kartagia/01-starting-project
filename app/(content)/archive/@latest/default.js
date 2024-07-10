@@ -1,5 +1,5 @@
 import LinkListComponent from "@/components/LinkListComponent.mjs";
-import { getLatestNews } from "@/lib/dummyNews.mjs";
+import { getLatestNews } from "@/lib/news.mjs";
 import React from "react";
 
 /**
